@@ -32,5 +32,20 @@
                 $('#newCustomer').hide();
             }
         });
+
+        $('.edit-transaction-btn').on('click', function() {
+            let transaction = $(this).data('transaction');
+            let that = $('#editTransactionModal');
+
+            that.find('#transactionId').val(transaction.id);
+            that.find('#customer').val(transaction.customer_id).change();
+            that.find('#paymentType').val(transaction.payment_type.toLowerCase()).change();
+            that.find('#shippingCost').val(transaction.shipping_cost);
+            that.find('#totalAmount').val(transaction.total_amount);
+            that.find('#description').val(transaction.description);
+            that.find('#source').val(transaction.source.toLowerCase()).change();
+
+            that.modal('show');
+        });
     });
 </script>
