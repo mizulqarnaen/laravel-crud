@@ -57,7 +57,7 @@
         $.validator.addMethod(
             "lettersonly",
             function(value, element) {
-                return this.optional(element) || /^[a-z]+$/i.test(value);
+                return this.optional(element) || value == value.match(/^[a-zA-Z\s]+$/);
             },
             "Letters only please"
         );
@@ -77,6 +77,7 @@
             let that = $('#editTransactionModal');
 
             that.find('#transactionId').val(transaction.id);
+            that.find('#customerId').val(transaction.customer_id);
             that.find('#customer').val(transaction.customer_id).change();
             that.find('#paymentType').val(transaction.payment_type).change();
             that.find('#shippingCost').val(transaction.shipping_cost);

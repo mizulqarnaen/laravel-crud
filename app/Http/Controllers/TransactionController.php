@@ -78,7 +78,7 @@ class TransactionController extends Controller
             ]);
 
             $transaction = Transaction::find($id);
-            $transaction->customer_id = $request->input('customer');
+            $transaction->customer_id = $request->input('customerId');
             $transaction->payment_type = $request->input('paymentType');
             $transaction->shipping_cost = $request->input('shippingCost');
             $transaction->description = $request->input('description');

@@ -180,8 +180,9 @@ aria-hidden="true">
                     <input type="hidden" name="transactionId" id="transactionId">
                     <div class="mb-3 row">
                         <label for="customer" class="col-md-4 col-lg-3 col-form-label">Customer</label>
+                        <input type="hidden" name="customerId" id="customerId">
                         <div class="col-md-8 col-lg-9">
-                            <select name="customer" id="customer" class="form-control" readonly>
+                            <select name="customer" id="customer" class="form-control" disabled="disabled">
                                 @foreach ($customer as $data)
                                     <option value="{{ $data->id }}">{{ $data->name }}</option>
                                 @endforeach
