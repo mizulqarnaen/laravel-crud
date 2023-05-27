@@ -22,7 +22,7 @@
             <span>Transactions</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="#">
             <i class="fa-solid fa-hand-holding-hand"></i>
             <span>Customers</span></a>
     </li>
