@@ -17,7 +17,7 @@
 <script src="/js/demo/datatables-demo.js"></script>
 
 <!-- Custom fonts for this template-->
-<script src="https://kit.fontawesome.com/240028c80f.js" crossorigin="anonymous"></script>
+<script src="/vendor/fontawesome-free/js/all.min.js"></script>
 
 <script>
     $(document).ready(function() {

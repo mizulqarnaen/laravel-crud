@@ -13,7 +13,7 @@
     <!-- Nav Item -->
     <li class="nav-item {{ (request()->is('transactions')) ? 'active' : '' }}">
         <a class="nav-link" href="/transactions">
-            <i class="fa-solid fa-cash-register"></i>
+            <i class="fa fa-cash-register"></i>&nbsp;&nbsp;
             <span>Transactions</span></a>
     </li>
 
