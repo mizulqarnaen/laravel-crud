@@ -22,9 +22,10 @@ class AuthController extends Controller
         }
    
         return redirect('login')->withSuccess('Login details are not valid');
-    }     
+    }
  
-    public function signOut() {
+    public function signOut()
+    {
         Session::flush();
         Auth::logout();
    
