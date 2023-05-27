@@ -17,7 +17,7 @@ use App\Http\Controllers\TransactionController;
 */
 
 Route::delete('/transactions/delete/{id}', [TransactionController::class, 'deleteData'])->name('transactions.delete');
-Route::put('/transactions/update', [TransactionController::class, 'updateData'])->name('transactions.update');
+Route::post('/transactions/update', [TransactionController::class, 'updateData'])->name('transactions.update');
 Route::post('/transactions/add', [TransactionController::class, 'addData'])->name('transactions.add');
 Route::get('/transactions', [TransactionController::class, 'index']);
 Route::get('/signout', [AuthController::class, 'signOut']);

@@ -170,18 +170,11 @@ aria-hidden="true">
                     <div class="mb-3 row">
                         <label for="customer" class="col-md-4 col-lg-3 col-form-label">Customer</label>
                         <div class="col-md-8 col-lg-9">
-                            <select name="customer" id="customer" class="form-control">
+                            <select name="customer" id="customer" class="form-control" readonly>
                                 @foreach ($customer as $data)
                                     <option value="{{ $data->id }}">{{ $data->name }}</option>
                                 @endforeach
                             </select>
-                            <input type="text" class="form-control" style="display:none"
-                                id="newCustomer" name="newCustomer">
-                            <div class="form-group form-check mt-2">
-                                <input type="checkbox" class="form-check-input"
-                                    id="addNewCustomer" name="addNewCustomer">
-                                <label class="form-check-label" for="addNewCustomer">Add new customer ?</label>
-                            </div>
                         </div>
                     </div>
                     <div class="mb-3 row">

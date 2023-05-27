@@ -63,6 +63,33 @@ class TransactionController extends Controller
         return redirect('login')->withSuccess(AuthController::NOT_ALLOWED);
     }
 
+    public function updateData(Request $request)
+    {
+        if (Auth::check()) {
+            $id = $request->input('transactionId');
+
+            $this->validate($request, [
+                'paymentType' => 'required',
+                'shippingCost' => 'required',
+                'totalAmount' => 'required',
+                'source' => 'required'
+            ]);
+
+            $transaction = Transaction::find($id);
+            $transaction->customer_id = $request->input('customer');
+            $transaction->payment_type = $request->input('paymentType');
+            $transaction->shipping_cost = $request->input('shippingCost');
+            $transaction->description = $request->input('description');
+            $transaction->total_amount = $request->input('totalAmount');
+            $transaction->source = $request->input('source');
+            $transaction->save();
+            
+            return redirect('/transactions');
+        }
+   
+        return redirect('login')->withSuccess(AuthController::NOT_ALLOWED);
+    }
+
     public function deleteData($id)
     {
         if (Auth::check()) {
