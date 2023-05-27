@@ -18,7 +18,7 @@ class TransactionController extends Controller
             ]);
         }
    
-        return redirect('login')->withSuccess('are not allowed to access');
+        return redirect('login')->withSuccess(AuthController::NOT_ALLOWED);
     }
 
     public function addData(Request $request)
@@ -60,7 +60,7 @@ class TransactionController extends Controller
             return redirect('/transactions');
         }
    
-        return redirect('login')->withSuccess('are not allowed to access');
+        return redirect('login')->withSuccess(AuthController::NOT_ALLOWED);
     }
 
     public function deleteData($id)
@@ -72,6 +72,6 @@ class TransactionController extends Controller
             return redirect('/transactions');
         }
    
-        return redirect('login')->withSuccess('are not allowed to access');
+        return redirect('login')->withSuccess(AuthController::NOT_ALLOWED);
     }
 }

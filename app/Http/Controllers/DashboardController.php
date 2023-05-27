@@ -13,7 +13,7 @@ class DashboardController extends Controller
             return view('pages.dashboard');
         }
    
-        return redirect('login')->withSuccess('are not allowed to access');
+        return redirect('login')->withSuccess(AuthController::NOT_ALLOWED);
     }
 
     public function login()

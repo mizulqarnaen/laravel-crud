@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
+
+    const NOT_ALLOWED = "are not allowed to access";
+
     public function loginAuth(Request $request)
     {
         $request->validate([
