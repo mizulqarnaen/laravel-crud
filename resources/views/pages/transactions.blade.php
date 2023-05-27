@@ -10,7 +10,17 @@
         class="fas fa-plus fa-sm text-white-50"></i> Add Transaction</a>
 </div>
 
-<!-- DataTales Example -->
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+<!-- DataTales -->
 <div class="card shadow mb-4">
     <div class="card-body">
         <div class="table-responsive">

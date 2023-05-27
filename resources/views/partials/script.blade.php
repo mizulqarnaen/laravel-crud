@@ -47,5 +47,9 @@
 
             that.modal('show');
         });
+
+        $(".alert-danger").fadeTo(2000, 500).slideUp(500, function(){
+            $(".alert-danger").slideUp(500);
+        });
     });
 </script>

@@ -5,7 +5,7 @@
 
     @include('partials.meta')
 
-    <title>Dashboard</title>
+    <title>Laravel</title>
 
     @include('partials.style')
 
