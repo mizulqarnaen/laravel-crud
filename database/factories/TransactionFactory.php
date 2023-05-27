@@ -18,11 +18,11 @@ class TransactionFactory extends Factory
     {
         return [
             'customer_id' => $this->faker->numberBetween(1, 10),
-            'payment_type' => $this->faker->word(),
+            'payment_type' => $this->faker->randomElement(['Transfer', 'Cash']),
             'shipping_cost' => $this->faker->randomNumber(5, true),
             'total_amount' => $this->faker->randomNumber(6, true),
             'description' => $this->faker->paragraph(),
-            'source' => $this->faker->word()
+            'source' => $this->faker->randomElement(['Direct', 'Marketplace', 'Website']),
         ];
     }
 }
