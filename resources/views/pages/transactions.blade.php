@@ -89,7 +89,7 @@
 aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-            <form action="{{ route('transactions.add') }}" method="post">
+            <form action="{{ route('transactions.add') }}" method="post" class="form-transaction">
                 @csrf
                 <div class="modal-header">
                     <h5 class="modal-title" id="addTransactionModalLabel">Add Transaction</h5>

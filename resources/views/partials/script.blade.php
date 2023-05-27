@@ -4,18 +4,16 @@
 
 <!-- Core plugin JavaScript-->
 <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="/vendor/jquery-validate/jquery.validate.min.js"></script>
 
 <!-- Custom scripts for all pages-->
 <script src="/js/sb-admin-2.min.js"></script>
 
 <!-- Page level plugins -->
-<script src="/vendor/chart.js/Chart.min.js"></script>
 <script src="/vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
 <!-- Page level custom scripts -->
-<script src="/js/demo/chart-area-demo.js"></script>
-<script src="/js/demo/chart-pie-demo.js"></script>
 <script src="/js/demo/datatables-demo.js"></script>
 
 <!-- Custom fonts for this template-->
@@ -23,6 +21,47 @@
 
 <script>
     $(document).ready(function() {
+        $('.form-transaction').validate({
+            rules: {
+                "newCustomer": {
+                    required: true,
+                    lettersonly: true
+                },
+                "shippingCost": {
+                    required: true,
+                    digits: true
+                },
+                "totalAmount": {
+                    required: true,
+                    digits: true,
+                    minlength: 3,
+                },
+            },
+            messages: {
+                "newCustomer": {
+                    required: "Nama customer wajib diisi!",
+                    lettersonly: "hanya huruf yang dibolehkan"
+                },
+                "shippingCost": {
+                    required: "Ongkos kirim wajib diisi!",
+                    digits: "hanya angka yang dibolehkan"
+                },
+                "totalAmount": {
+                    required: "Total amount wajib diisi!",
+                    digits: "hanya angka yang dibolehkan",
+                    minlength: "minimal 3 digit angka"
+                }
+            }
+        });
+
+        $.validator.addMethod(
+            "lettersonly",
+            function(value, element) {
+                return this.optional(element) || /^[a-z]+$/i.test(value);
+            },
+            "Letters only please"
+        );
+
         $('#addNewCustomer').on('click', function() {
             if($('#addNewCustomer').is(':checked')) {
                 $('#customer').hide();
