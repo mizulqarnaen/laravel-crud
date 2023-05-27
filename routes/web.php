@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TransactionController;
 
 /*
@@ -22,5 +22,5 @@ Route::post('/transactions/add', [TransactionController::class, 'addData'])->nam
 Route::get('/transactions', [TransactionController::class, 'index']);
 Route::get('/signout', [AuthController::class, 'signOut']);
 Route::post('/login-auth', [AuthController::class, 'loginAuth'])->name('login.auth');
-Route::get('/login', [DashboardController::class, 'login']);
-Route::get('/', [DashboardController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index']);
+Route::get('/', [TransactionController::class, 'index']);
