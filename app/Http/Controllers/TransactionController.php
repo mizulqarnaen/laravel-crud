@@ -54,4 +54,16 @@ class TransactionController extends Controller
    
         return redirect('login')->withSuccess('are not allowed to access');
     }
+
+    public function deleteData($id)
+    {
+        if (Auth::check()) {
+            $transactions = Transaction::findOrFail($id);
+            $transactions->delete();
+            
+            return redirect('/transactions');
+        }
+   
+        return redirect('login')->withSuccess('are not allowed to access');
+    }
 }
