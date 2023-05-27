@@ -25,28 +25,29 @@
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" style="width:100%">
+                <caption>Tabel Transactions</caption>
                 <thead>
                     <tr>
-                        <th style="width:15%">Date</th>
-                        <th style="width:15%">Customer</th>
-                        <th style="width:10%">Payment</th>
-                        <th style="width:10%">Shipping</th>
-                        <th style="width:30%">Description</th>
-                        <th style="width:10%">Total Amount</th>
-                        <th style="width:10%">Source</th>
-                        <th style="width:15%">Action</th>
+                        <th id="thDateHeader" style="width:15%">Date</th>
+                        <th id="thCustomerHeader" style="width:15%">Customer</th>
+                        <th id="thPaymentHeader" style="width:10%">Payment</th>
+                        <th id="thShippingHeader" style="width:10%">Shipping</th>
+                        <th id="thDescriptionHeader" style="width:30%">Description</th>
+                        <th id="thTotalAmountHeader" style="width:10%">Total Amount</th>
+                        <th id="thSourceHeader" style="width:10%">Source</th>
+                        <th id="thActionHeader" style="width:15%">Action</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
-                        <th>Date</th>
-                        <th>Customer</th>
-                        <th>Payment</th>
-                        <th>Shipping</th>
-                        <th>Description</th>
-                        <th>Total Amount</th>
-                        <th>Source</th>
-                        <th>Action</th>
+                        <th id="thDateFooter">Date</th>
+                        <th id="thCustomerFooter">Customer</th>
+                        <th id="thPaymentFooter">Payment</th>
+                        <th id="thShippingFooter">Shipping</th>
+                        <th id="thDescriptionFooter">Description</th>
+                        <th id="thTotalAmountFooter">Total Amount</th>
+                        <th id="thSourceFooter">Source</th>
+                        <th id="thActionFooter">Action</th>
                     </tr>
                 </tfoot>
                 <tbody>

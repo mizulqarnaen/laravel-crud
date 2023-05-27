@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 
 class TransactionController extends Controller
 {
+    const REDIRECT_VIEW = "/transactions";
+
     public function index()
     {
         if (Auth::check()) {
@@ -57,7 +59,7 @@ class TransactionController extends Controller
                 'source' => $request->input('source')
             ]);
             
-            return redirect('/transactions');
+            return redirect(self::REDIRECT_VIEW);
         }
    
         return redirect('login')->withSuccess(AuthController::NOT_ALLOWED);
@@ -84,7 +86,7 @@ class TransactionController extends Controller
             $transaction->source = $request->input('source');
             $transaction->save();
             
-            return redirect('/transactions');
+            return redirect(self::REDIRECT_VIEW);
         }
    
         return redirect('login')->withSuccess(AuthController::NOT_ALLOWED);
@@ -96,7 +98,7 @@ class TransactionController extends Controller
             $transactions = Transaction::findOrFail($id);
             $transactions->delete();
             
-            return redirect('/transactions');
+            return redirect(self::REDIRECT_VIEW);
         }
    
         return redirect('login')->withSuccess(AuthController::NOT_ALLOWED);
